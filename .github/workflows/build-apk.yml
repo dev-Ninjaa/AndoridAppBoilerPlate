@@ -42,14 +42,6 @@ jobs:
             cp .env.example .env
           fi
 
-      - name: Restore Debug Keystore
-        run: |
-          # If debug.keystore is not present in checkout, decode from base64 if available
-          if [ ! -f "debug.keystore" ] && [ -f "debug.keystore.base64" ]; then
-            echo "Restoring debug.keystore from base64..."
-            base64 -d debug.keystore.base64 > debug.keystore
-          fi
-
       - name: Ensure Gradle Wrapper is Executable
         run: |
           if [ ! -f "gradlew" ]; then
