@@ -4,24 +4,43 @@ An aesthetic daily focus, intentions, and reflection companion app built with mo
 
 ---
 
-## 🚀 Instant APK Downloads via GitHub Actions
+## 🚀 Download & Install
 
-This repository includes a continuous integration workflow (`.github/workflows/build-apk.yml`) configured to automatically compile, sign, and package a ready-to-test `.apk` file whenever you push code or trigger the workflow manually.
+### Method 1: Direct Download from Releases (Easiest!) 🎯
 
-### How to get the APK on your Android device:
+1. **Go to [Releases](../../releases)**
+2. **Download** the latest `Aura-vX.X.X.apk` file
+3. **Install** on your Android device (enable "Install from Unknown Sources" if prompted)
+4. **Done!** Open Aura and enjoy ✨
 
-1. **Push to GitHub**:
-   - Push your code to the `main` or `master` branch (or go to the **Actions** tab on GitHub and click **Run workflow**).
-2. **Download Artifact**:
-   - Navigate to the **Actions** tab in your GitHub repository.
-   - Click the latest workflow run: **Build and Deliver Android APK**.
-   - Scroll down to the **Artifacts** section at the bottom of the summary page.
-   - Click **`Aura-Debug-APK`** to download the ZIP file.
-3. **Install on Your Android Phone**:
-   - Transfer or open the downloaded file on your Android phone.
-   - Unzip and tap **`app-debug.apk`**.
-   - If prompted by Android, grant permission to *"Install unknown apps"* for your browser or file manager.
-   - Tap **Install** and open **Aura**!
+### Method 2: Build from GitHub Actions
+
+This repository includes CI/CD workflows that automatically build APKs:
+
+#### For Quick Testing (Artifacts):
+1. Go to the **[Actions](../../actions)** tab
+2. Click the latest **Build and Deliver Android APK** run
+3. Download **`Aura-Debug-APK`** from the Artifacts section
+4. Unzip and install `app-debug.apk` on your device
+
+#### Creating a New Release:
+To create a new downloadable release:
+
+```bash
+# Create and push a version tag
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+The workflow will automatically:
+- Build the APK
+- Create a GitHub Release
+- Upload the APK with installation instructions
+
+Or use the GitHub UI:
+1. Go to **Releases** → **Draft a new release**
+2. Create a new tag (e.g., `v1.0.0`)
+3. The APK will be automatically built and attached
 
 ---
 
